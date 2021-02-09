@@ -25,7 +25,7 @@ public class FrameCalc {
 		
 		//CONSTRUINDO JLABEL NOME
 		JLabel labelNome = new JLabel();
-		labelNome.setText("NOME:");
+		labelNome.setText("Nome:");
 		labelNome.setBounds(10, 10, 60, 30);
 		
 		//CONSTRUINDO TEXTFIELD NOME
@@ -34,7 +34,7 @@ public class FrameCalc {
 		
 		//CONSTRUINDO EXIBIÇÃO DATA
 		JLabel labelData = new JLabel();
-		labelData.setText("DATA DE NASCIMENTO:");
+		labelData.setText("Data de nascimento:");
 		labelData.setBounds(310, 10, 150, 30);
 		
 		//CONSTRUINDO TEXTFIELD DATA
@@ -43,7 +43,7 @@ public class FrameCalc {
 		
 		//CONSTRUINDO JLABEL ALTURA
 		JLabel labelAltura = new JLabel();
-		labelAltura.setText("ALTURA:");
+		labelAltura.setText("Altura:");
 		labelAltura.setBounds(10, 60, 60, 30);
 		
 		//CONSTRUINDO TEXTFIELD ALTURA
@@ -52,7 +52,7 @@ public class FrameCalc {
 		
 		//CONSTRUINDO JLABEL PESO
 		JLabel labelPeso = new JLabel();
-		labelPeso.setText("PESO:");
+		labelPeso.setText("Peso:");
 		labelPeso.setBounds(10, 100, 60, 30);
 		
 		//CONSTRUINDO TEXTFIELD PESO
@@ -61,7 +61,7 @@ public class FrameCalc {
 		
 		//CONSTRUINDO LABEL PARA A CHECKBOX
 		JLabel labelSexo = new JLabel();
-		labelSexo.setText("SEXO:");
+		labelSexo.setText("Sexo:");
 		labelSexo.setBounds(225, 60, 100, 30);
 		
 		//CONSTRUINDO CHECKBOX MASC - FEMI
@@ -82,7 +82,7 @@ public class FrameCalc {
 		//CONSTRUINDO COMBOBOX LVL ATIVIDADE
 		JComboBox<String> atividade = new JComboBox<String>();
 		atividade.setBounds(420, 100, 110, 30);
-		atividade.addItem(" Muito Baixa");
+		atividade.addItem(" Muito baixa");
 		atividade.addItem(" Baixa");
 		atividade.addItem(" Mediana");
 		atividade.addItem(" Alta");
