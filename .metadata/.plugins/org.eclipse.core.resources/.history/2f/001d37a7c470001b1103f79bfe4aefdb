@@ -1,0 +1,47 @@
+package br.com.empresa.model;
+
+public class Calculo {
+	
+	private double altura;
+	private double peso;
+	private double idade;
+	
+	public void setAltura(double altura) {
+		this.altura = altura;
+	}
+	
+	public double getAltura() {
+		return this.altura;	
+	}
+	
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+	
+	public double getPeso() {
+		return this.peso;
+	}
+	
+	public void setIdade(double idade) {
+		this.idade = idade;
+	}
+	
+	public double getData() {
+		return this.idade;
+	}
+	
+	public double calcularIMC() {
+		return this.peso / (this.altura * this.altura);
+	}
+	
+	public void verificarIdade () {
+		double valorInicio;
+		double valorFinal;
+		
+		if(idade<31) {
+			valorInicio=15.3;
+			valorFinal = 679;
+		}
+		
+	}
+}

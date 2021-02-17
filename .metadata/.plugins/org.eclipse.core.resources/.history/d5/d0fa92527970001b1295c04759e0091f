@@ -1,0 +1,168 @@
+package br.com.empresa.gui;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.text.ParseException;
+import java.util.Date;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
+
+public class FrameCalc {
+
+	public void	criarTela() throws ParseException {
+		
+		//CARACTERISTICAS DA TELA 
+		JFrame tela = new JFrame();
+		tela.setTitle("Calculo de IMC e NCD");
+		tela.setSize(600, 320);
+		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		tela.setLayout(null);
+		
+		//CONSTRUINDO JLABEL NOME
+		JLabel labelNome = new JLabel();
+		labelNome.setText("Nome:");
+		labelNome.setBounds(10, 10, 60, 30);
+		
+		//CONSTRUINDO TEXTFIELD NOME QUE ACEITE APENAS LETRAS SEM UM MAX DE DIGITOS
+		JTextField textNome = new JTextField();
+		textNome.addKeyListener(new KeyAdapter() {
+			public void keyTyped(KeyEvent evt) {
+				if(Character.isDigit(evt.getKeyChar())) {
+					evt.consume();
+				}
+			}
+		});
+		
+		textNome.setBounds(60, 10, 320, 30);
+		
+		//CONSTRUINDO EXIBIÇÃO DATA
+		JLabel labelData = new JLabel();
+		labelData.setText("Idade:");
+		labelData.setBounds(400, 10, 60, 30);
+		
+		//CONSTRUINDO TEXTFIELD DATA
+		JTextField textIdade = new JTextField();
+		textIdade.addKeyListener(new KeyAdapter() {
+			public void keyTyped(KeyEvent evt) {
+				if(!Character.isDigit(evt.getKeyChar()) || textIdade.getText().length()==3) {
+					evt.consume();
+				}
+			}
+		});
+
+		textIdade.setBounds(450, 10, 110, 30);
+		
+		//CONSTRUINDO JLABEL ALTURA
+		JLabel labelAltura = new JLabel();
+		labelAltura.setText("Altura (cm):");
+		labelAltura.setBounds(10, 60, 70, 30);
+		
+		//CONSTRUINDO TEXTFIELD ALTURA QUE ACEITE APENAS NUMEROS COM O MAX DE 3 DIGITOS
+		JTextField textAltura = new JTextField();
+		textAltura.addKeyListener(new KeyAdapter() {
+			public void keyTyped(KeyEvent evt) {
+				if(!Character.isDigit(evt.getKeyChar()) || textAltura.getText().length()==3) {
+					evt.consume();
+				}
+			}
+		});
+		
+		textAltura.setBounds(90, 60, 110, 30);
+		
+		//CONSTRUINDO JLABEL PESO
+		JLabel labelPeso = new JLabel();
+		labelPeso.setText("Peso (kg):");
+		labelPeso.setBounds(10, 100, 70, 30);
+		
+		//CONSTRUINDO TEXTFIELD PESO QUE ACEITE APENAS NUMEROS COM O MAX DE 3 DIGITOS
+		JTextField textPeso = new JTextField();
+		textPeso.addKeyListener(new KeyAdapter() {
+			public void keyTyped(KeyEvent evt) {
+				if(!Character.isDigit(evt.getKeyChar()) || textPeso.getText().length()==3) {
+					evt.consume();
+				}
+			}
+		});
+		
+		textPeso.setBounds(90, 100, 110, 30);
+		
+		//CONSTRUINDO LABEL PARA A CHECKBOX
+		JLabel labelSexo = new JLabel();
+		labelSexo.setText("Sexo:");
+		labelSexo.setBounds(225, 60, 100, 30);
+		
+		//CONSTRUINDO CHECKBOX MASC - FEMI
+		JRadioButton masculino = new JRadioButton("Masculino");
+		JRadioButton feminino = new JRadioButton("Feminino");
+		masculino.setBounds(220, 100, 85, 30);
+		feminino.setBounds(305, 100, 85, 30); //30
+		
+		ButtonGroup grupo = new ButtonGroup();
+		grupo.add(masculino);
+		grupo.add(feminino);
+		
+		//CONSTRUINDO LABEL PARA LVL ATIVIDADE
+		JLabel labelFatividade =  new JLabel();
+		labelFatividade.setText("Frequência de atividade:");
+		labelFatividade.setBounds(420, 60, 150, 30);
+		
+		//CONSTRUINDO COMBOBOX LVL ATIVIDADE
+		JComboBox<String> atividade = new JComboBox<String>();
+		atividade.setBounds(420, 100, 110, 30);
+		atividade.addItem(" Nenhuma");
+		atividade.addItem(" Leve");
+		atividade.addItem(" Moderada");
+		atividade.addItem(" Elevada");
+		atividade.addItem(" Intensa");
+		
+		//CONSTRUINDO JLABEL RESULTADO IMC =
+		JLabel labelIMC = new JLabel();
+		labelIMC.setText("Seu IMC é: ");
+		labelIMC.setBounds(10, 200, 190, 30);
+		
+		//CONSTRUINDO LABEL RESULTADO NCD =
+		JLabel labelNCD = new JLabel();
+		labelNCD.setText("Seu NCD é: ");
+		labelNCD.setBounds(10, 240, 190, 30);
+		
+		//CONSTRUINDO BOTÃO CALCULAR
+		JButton btnCalcular = new JButton();
+		btnCalcular.setText("CALCULAR");
+		btnCalcular.setBounds(260, 229, 120, 40);
+		
+		//CONSTRUINDO BOTÃO LIMPAR
+		JButton btnLimpar = new JButton();
+		btnLimpar.setText("LIMPAR");
+		btnLimpar.setBounds(420, 229, 120, 40);
+		
+		//EXIBINDO NA TELA
+		tela.getContentPane().add(labelNome);
+		tela.getContentPane().add(textNome);
+		tela.getContentPane().add(labelData);
+		tela.getContentPane().add(data);
+		tela.getContentPane().add(labelAltura);
+		tela.getContentPane().add(textAltura);
+		tela.getContentPane().add(labelPeso);
+		tela.getContentPane().add(textPeso);
+		tela.getContentPane().add(labelIMC);
+		tela.getContentPane().add(labelNCD);
+		tela.getContentPane().add(btnCalcular);
+		tela.getContentPane().add(btnLimpar);
+		tela.getContentPane().add(labelSexo);
+		tela.getContentPane().add(labelFatividade);
+		tela.getContentPane().add(atividade);
+		tela.getContentPane().add(masculino);
+		tela.getContentPane().add(feminino);
+		
+		tela.setVisible(true);
+	}
+}

@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\T-Gamer\ds2ma-workspace\CalcIMCNCD\.metadata\.plugins\org.eclipse.jdt.core
+3237092488.index
+2651931537.index

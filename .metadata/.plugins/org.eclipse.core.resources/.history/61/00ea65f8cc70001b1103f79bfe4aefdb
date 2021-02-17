@@ -1,0 +1,133 @@
+package br.com.empresa.model;
+
+public class Calculo {
+	
+	private double altura;
+	private double peso;
+	private double idade;
+	private String sexo;
+	private String atividade;
+	
+	public Calculo(double altura, double peso, double idade, String sexo, String atividade) {
+		super();
+		this.altura = altura;
+		this.peso = peso;
+		this.idade = idade;
+		this.sexo = sexo;
+		this.atividade = atividade;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public String getAtividade() {
+		return atividade;
+	}
+
+	public void setAtividade(String atividade) {
+		this.atividade = atividade;
+	}
+
+	public double getIdade() {
+		return idade;
+	}
+
+	public void setAltura(double altura) {
+		this.altura = altura * 0.01;
+	}
+	
+	public double getAltura() {
+		return this.altura;	
+	}
+	
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+	
+	public double getPeso() {
+		return this.peso;
+	}
+	
+	public void setIdade(double idade) {
+		this.idade = idade;
+	}
+	
+	public double getData() {
+		return this.idade;
+	}
+	
+	public double calcularIMC() {
+		return this.peso / (this.altura * this.altura);
+	}
+	
+	public double calcularNDC () {
+		double valorInicio;
+		double valorFinal;
+		double valorAtividade;
+		
+		if(sexo.equals("masculino")) {
+			
+			if(idade<31) {
+				valorInicio = 15.3;
+				valorFinal = 679;
+			}
+			else if(idade<60) {
+				valorInicio = 11.60;
+				valorFinal = 879;
+			}
+			else {
+				valorInicio = 13.5;
+				valorFinal = 487;
+			}
+			
+			if(atividade.equals(" Leve")){
+				valorAtividade = 1.5;
+			}
+			
+			else if(atividade.equals(" Moderada")) {
+				valorAtividade = 1.8;
+			}
+			
+			else {
+				valorAtividade = 2.1;
+			}
+		}
+		
+		else {
+			
+			if(idade<31) {
+				valorInicio = 15.3;
+				valorFinal = 679;
+			}
+			else if(idade<60) {
+				valorInicio = 11.60;
+				valorFinal = 879;
+			}
+			else {
+				valorInicio = 13.5;
+				valorFinal = 487;
+			}
+			
+			if(atividade.equals(" Leve")) {
+				valorAtividade = 1.6;
+			}
+			
+			else if(atividade.equals(" Moderada")) {
+				valorAtividade = 1.6;
+			}
+			
+			else {
+				valorAtividade = 1.8;
+			}
+			
+		}
+		
+		return valorAtividade * (valorInicio * peso + valorFinal);
+		
+	}
+}
